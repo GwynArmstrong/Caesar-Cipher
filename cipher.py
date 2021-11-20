@@ -1,4 +1,3 @@
-#hello baby
 #Caesar Cipher
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)
