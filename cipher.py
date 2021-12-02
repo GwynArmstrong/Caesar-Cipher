@@ -5,6 +5,8 @@ import time #SR needed to use time.time() function
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)
 
+#GA I combined the functions that SS made to determine how the game will be played and the time function made by SR to make the game work, and the final if statement in time function to check if input is correct
+
 #SS lists that correspond to level of difficulty, TA created words that go inside of lists
 level_easy = ['elf', 'bell', 'gift', 'ice', 'toys', 'log', 'hope', 'snow', 'cold', 'pie', 'star', 'wish', 'noel', 'joy', 'love', 'coal', 'tree', 'red', 'gold']
 level_medium = ['angel', 'green', 'candy', 'merry', 'dasher', 'candle', 'dancer', 'frosty', 'socks', 'carols', 'jolly', 'ribbon', 'light', 'sleigh', 'vixon', 'holly', 'cookie', 'santa', 'family', 'donner', 'winter', 'cupid', 'comet', 'parade']
