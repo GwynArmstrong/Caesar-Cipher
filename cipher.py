@@ -1,14 +1,14 @@
 import random #SS used to choose a random word from the lists of words
+import time #SR needed to use time.time() function
 
 #SS symbols used to envrypt
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)
 
-#SS lists that correspond to level of difficulty, 
-level_easy = ['sun', 'fire', 'rain']#Tony will add the list of words
-level_medium = ['sun', 'fire', 'rain']
-level_hard = ['sun', 'fire', 'rain']
-
+#SS lists that correspond to level of difficulty, TA created words that go inside of lists
+level_easy = ['elf', 'bell', 'gift', 'ice', 'toys', 'log', 'hope', 'snow', 'cold', 'pie', 'star', 'wish', 'noel', 'joy', 'love', 'coal', 'tree', 'red', 'gold']
+level_medium = ['angel', 'green', 'candy', 'merry', 'dasher', 'candle', 'dancer', 'frosty', 'socks', 'carols', 'jolly', 'ribbon', 'light', 'sleigh', 'vixon', 'holly', 'cookie', 'santa', 'family', 'donner', 'winter', 'cupid', 'comet', 'parade']
+level_hard = ['rudolph', 'prancer', 'holiday', 'blitzen', 'northpole', 'polarbear', 'candycane', 'decoration', 'wrappingpaper', 'hotchocolate', 'mistletoe', 'celebrate', 'gingerbread', 'christmas', 'stocking', 'present', 'snowman', 'chocolate', 'ornament', 'reindeer']
 
 #SS This function will ask user to input level of difficulty
 def how_difficult(): 
@@ -19,8 +19,7 @@ def how_difficult():
             return difficulty
         else: #SS if the input is not easy medium or hard the loop restarts until the input is correct
             print("Invalid input")
-            
-        
+               
 #SS This function chooses a random word from the lists based on difficulty
 def word_to_be_encrypted():
     if difficulty == 'easy': #SS If the how_difficult function returns easy
@@ -41,6 +40,24 @@ def encryption_key():
             return key #SS If True so if input is an int between 1 and 52 returns the key
         else:
             print("Invalid input") #SS If false asks the user to try again
+            
+#SR This function asks the user to input how long they'd like the game to last for
+def get_delay():
+    while True:
+        delay = int(input("Game Time: 30, 60, 90 seconds?\n"))#input time
+        if delay == int(30):
+            return delay #If the input is valid
+        elif delay == int(60):
+            return delay # If the input is valid
+        elif delay == int(90):
+            return int(delay)#If the input is valid
+        else:
+            print("Invalid input")#If invalid input asks user to try again 
+         
+#GA Find the total time of the game using the delay found above 
+def gameTime(delay):
+    game_end = time.time() + delay
+    return game_end
 
 #SS Encrypts the r_word, the word that was chosen randomly
 def getTranslatedMessage(r_word, key):
@@ -64,9 +81,28 @@ def getTranslatedMessage(r_word, key):
         
     return new_word
 
-
 difficulty = how_difficult()
 r_word = word_to_be_encrypted()
 key = encryption_key()
+delay = get_delay()
+game_end = gameTime(delay)
 message = getTranslatedMessage(r_word, key)
-print(message) #SS prints the result of the encryption
+
+#SR
+while True:
+    if time.time() < game_end:
+        #GA This if statement checks if the user has inputted the correct solution
+        #if they have it gives them another word, if not they must try again
+        print(message) #SS Prints the result of the encryption
+        guess = input("Enter what you think the decrypted word is (your key of incryption is " + str(key) + "):\n")
+        if guess == r_word:
+            print("You are correct")
+            r_word = word_to_be_encrypted()
+            message = getTranslatedMessage(r_word, key)
+        else:
+            print("Please try again")
+    elif time.time() >= game_end:
+        print('GAME OVER')
+        break
+    else:
+        break
