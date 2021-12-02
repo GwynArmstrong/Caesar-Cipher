@@ -4,6 +4,7 @@ import time #SR needed to use time.time() function
 #SS symbols used to envrypt
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)
+score=0
 
 #SS lists that correspond to level of difficulty, TA created words that go inside of lists
 level_easy = ['elf', 'bell', 'gift', 'ice', 'toys', 'log', 'hope', 'snow', 'cold', 'pie', 'star', 'wish', 'noel', 'joy', 'love', 'coal', 'tree', 'red', 'gold']
@@ -129,13 +130,16 @@ while True:
         print(message) #SS Prints the result of the encryption
         guess = input("Enter what you think the decrypted word is (your key of incryption is " + str(key) + "):\n")
         if guess == r_word:
-            print("You are correct! Your new word is:")
+            print("You are correct! Your score is shown below. Your new word is:") 
             r_word = word_to_be_encrypted()
+            score = score+50
+            print(score)
             message = getTranslatedMessage(r_word, key)
         else:
             print("Please try again")
     elif time.time() >= game_end:
-        print('GAME OVER')
+        print('GAME OVER! Your final score was:')
+        print(score)
         break
     else:
         break
