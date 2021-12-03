@@ -6,6 +6,8 @@ SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 MAX_KEY_SIZE = len(SYMBOLS)
 score=0
 
+#GA Combined functions that got settings for game created by SS and the timer function created by SR to make the game work together, and created the if statement to check if the user inputted the correct answer or not
+
 #SS lists that correspond to level of difficulty, TA created words that go inside of lists
 level_easy = ['elf', 'bell', 'gift', 'ice', 'toys', 'log', 'hope', 'snow', 'cold', 'pie', 'star', 'wish', 'noel', 'joy', 'love', 'coal', 'tree', 'red', 'gold']
 level_medium = ['angel', 'green', 'candy', 'merry', 'Dasher', 'candle', 'dancer', 'frosty', 'socks', 'carols', 'jolly', 'ribbon', 'light', 'sleigh', 'Vixen', 'holly', 'cookie', 'santa', 'family', 'Donner', 'winter', 'Cupid', 'Comet', 'parade']
