@@ -8,8 +8,8 @@ score=0
 
 #SS lists that correspond to level of difficulty, TA created words that go inside of lists
 level_easy = ['elf', 'bell', 'gift', 'ice', 'toys', 'log', 'hope', 'snow', 'cold', 'pie', 'star', 'wish', 'noel', 'joy', 'love', 'coal', 'tree', 'red', 'gold']
-level_medium = ['angel', 'green', 'candy', 'merry', 'dasher', 'candle', 'dancer', 'frosty', 'socks', 'carols', 'jolly', 'ribbon', 'light', 'sleigh', 'vixon', 'holly', 'cookie', 'santa', 'family', 'donner', 'winter', 'cupid', 'comet', 'parade']
-level_hard = ['rudolph', 'prancer', 'holiday', 'blitzen', 'northpole', 'polarbear', 'candycane', 'decoration', 'wrappingpaper', 'hotchocolate', 'mistletoe', 'celebrate', 'gingerbread', 'christmas', 'stocking', 'present', 'snowman', 'chocolate', 'ornament', 'reindeer']
+level_medium = ['angel', 'green', 'candy', 'merry', 'Dasher', 'candle', 'dancer', 'frosty', 'socks', 'carols', 'jolly', 'ribbon', 'light', 'sleigh', 'Vixen', 'holly', 'cookie', 'santa', 'family', 'Donner', 'winter', 'Cupid', 'Comet', 'parade']
+level_hard = ['Rudolph', 'Prancer', 'holiday', 'Blitzen', 'NorthPole', 'PolarBear', 'CandyCane', 'decoration', 'WrappingPaper', 'HotChocolate', 'mistletoe', 'celebrate', 'gingerbread', 'christmas', 'stocking', 'present', 'snowman', 'chocolate', 'ornament', 'reindeer']
 
 #SS This function will ask user to input level of difficulty
 def how_difficult(): 
