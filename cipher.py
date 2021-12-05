@@ -126,20 +126,20 @@ delay = get_delay()
 game_end = gameTime(delay)
 message = getTranslatedMessage(r_word, key)
 
-#SR
+#TA this function is what controls the length of the game, it will keep running until the time is greater than the length the user chose
 while True:
     if time.time() < game_end:
         #GA This if statement checks if the user has inputted the correct solution
         #if they have it gives them another word, if not they must try again
         print(message) #SS Prints the result of the encryption
         guess = input("Enter what you think the decrypted word is (your key of incryption is " + str(key) + "):\n")
-        if guess == r_word:
+        if guess == r_word: #GA if the inputted word is equal to the original decrypted word give them a new word
             print("You are correct! Your score is shown below. Your new word is:") 
             r_word = word_to_be_encrypted()
             score = score+50
             print(score)
             message = getTranslatedMessage(r_word, key)
-        else:
+        else: #GA if guess is wrong, ask user to try again
             print("Please try again")
     elif time.time() >= game_end:
         print('GAME OVER! Your final score was:')
