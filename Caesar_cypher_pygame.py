@@ -23,9 +23,6 @@ text_display_colour= (196,63,63)
 Alphabetlist_font = pygame.font.SysFont("Ariel", 60)
 text_display_font = pygame.font.SysFont("didot.tte", 40)
 
-#SR setting the font of the game code that will be displayed
-Game_font = pygame.font.SysFont("Ariel", 30)
-
 #SR variable for the text input that will be inputted by the user
 user_input_text = " " 
 
