@@ -1,5 +1,7 @@
+#TA worked on all doc strings
+
 import random #SS used to choose a random word from the lists of words
-import time #SR needed to use time.time() function
+import time #TA needed to use time.time() function
 
 #SS symbols used to envrypt
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
@@ -102,13 +104,13 @@ def getTranslatedMessage(r_word, key):
         symbolIndex = SYMBOLS.find(symbol)
         if symbolIndex == -1: #SS Symbol not found in SYMBOLS.
         #SS Just add this symbol without any change.
-            new_word += symbol #SS adds symbols to new word which is an empty string
+            new_word += symbol #SS adds symbols that aren't in SYMBOLS to new word which is an empty string
             
         else:
-            #SS ncrypt or dercypt.
+            #SS encrypt or decrypt.
             symbolIndex += key
 
-        if symbolIndex >= len(SYMBOLS):
+        if symbolIndex >= len(SYMBOLS): 
             symbolIndex -= len(SYMBOLS)
         elif symbolIndex <0:
             symbolIndex += len(SYMBOLS)
